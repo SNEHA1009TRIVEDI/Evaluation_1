@@ -1,15 +1,24 @@
 const rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-const roll=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10];
+const roll = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10];
 function getBowlingScore(rolls) {
-	let score=0;
- 
-	for (let index = 0; index < rolls.length-1; index++) {
-        
-		if((rolls[index]+rolls[index+1])<10){
-			score+=rolls[index]+rolls[index+1];
-			index=index+1;
+	let score = 0;
+
+	for (let index = 0; index < rolls.length - 1; index++) {
+
+		if ((rolls[index] + rolls[index + 1]) < 10) {
+			score += rolls[index] + rolls[index + 1];
+			index = index + 1;
 		}
-       
+		else if (rolls[index] == 10) {
+			score = score + 10;
+			if (index < rolls.length - 2) {
+				score = score + rolls[index + 1] + rolls[index + 2];
+			}
+			if (index == 18) {
+				index += 2;
+			}
+		}
+
 	}
 	return score;
 
