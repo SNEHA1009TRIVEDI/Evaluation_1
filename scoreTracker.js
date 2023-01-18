@@ -18,6 +18,10 @@ function getBowlingScore(rolls) {
 				index += 2;
 			}
 		}
+		else if((rolls[index]+rolls[index+1])==10){
+            score+=10+rolls[index+2];
+            index++;
+        }
 
 	}
 	return score;
@@ -25,5 +29,6 @@ function getBowlingScore(rolls) {
 }
 console.log(getBowlingScore(rolls));
 console.log(getBowlingScore(roll));
+console.log(getBowlingScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
 
 module.exports = { getBowlingScore };
