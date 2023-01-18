@@ -18,10 +18,10 @@ function getBowlingScore(rolls) {
 				index += 2;
 			}
 		}
-		else if((rolls[index]+rolls[index+1])==10){
-            score+=10+rolls[index+2];
-            index++;
-        }
+		else if ((rolls[index] + rolls[index + 1]) == 10) {
+			score += 10 + rolls[index + 2];
+			index++;
+		}
 
 	}
 	return score;
