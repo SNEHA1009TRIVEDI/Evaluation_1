@@ -1,26 +1,27 @@
-const rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]
-let score = 0;
+const rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 
 function getBowlingScore(rolls) {
-    if (rolls.length < 20) {
-        throw new Error('Inputs are not correct');
+	//let frame=1;
+	let score=0;
+	//let checkFrame=1;
+	if (rolls.length < 20) {
+		return -1;
 
-    }
+	}
 
-    for (let index = 0; index < rolls.length; index++) {
-        if (rolls[index] < 9 && rolls[index + 1] < 9) {
-            score = rolls[index] + rolls[index + 1];
-        }
+	for (let index = 0; index < rolls.length; index++) {
+		//if(checkFrame==1){
+		if((rolls[index]+rolls[index+1])<10){
+			score+=rolls[index]+rolls[index+1];
+			index+=1;
+		}
 
-        else {
-            if ((rolls[index] + rolls[index + 1]) == 10) {
-                score = 10 + rolls[index + 2];
-            }
-        }
+		
+	}
+	return score;
 
-
-    }
+	
 
 }
-
+console.log(getBowlingScore(rolls));
 module.exports = { getBowlingScore };
