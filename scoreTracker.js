@@ -22,5 +22,5 @@ function getBowlingScore(rolls) {
     }
 
 }
-
+console.log(getBowlingScore(rolls));
 module.exports = { getBowlingScore };
